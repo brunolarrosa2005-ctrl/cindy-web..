@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Lashes & Nails UY | Estética Cindy Silveira</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        :root {
+            --soft-pink: #f8ecee;
+            --accent-pink: #e8b4b8;
+            --deep-pink: #d4888f;
+            --nude-bg: #faf6f0;
+            --dark-color: #2b2b2b;
+            --light-color: #ffffff;
+            --gray-text: #666666;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-title);
+            letter-spacing: 0.5px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.8rem; color: var(--dark-color); margin-bottom: 10px; }
+        .section-title p { color: var(--gray-text); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        .btn-primary { background-color: var(--dark-color); color: var(--light-color); }
+        .btn-primary:hover { background-color: var(--deep-pink); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 136, 143, 0.4); }
+        .btn-secondary { background-color: transparent; color: var(--dark-color); border: 1px solid var(--dark-color); }
+        .btn-secondary:hover { background-color: var(--soft-pink); border-color: var(--accent-pink); }
+
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px); z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: var(--font-title); font-size: 1.5rem; font-weight: 700; color: var(--dark-color); text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--deep-pink); }
+
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--deep-pink); }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://user-images.oopen.cloud/_/el:1/w:600/h:360/dpr:1/rt:fill/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/images/c5470d9b-d8d4-4cfb-9c16-dec0a8ce76ea.png') center/cover no-repeat;
+            display: flex; align-items: center; text-align: center; position: relative; padding-top: 80px;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px); padding: 50px 30px;
+            border-radius: var(--border-radius); max-width: 700px; margin: 0 auto; box-shadow: var(--shadow);
+        }
+
+        .hero h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 15px; color: var(--dark-color); }
+        .hero p { font-size: 1.1rem; color: var(--gray-text); margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; }
+
+        .category-header {
+            font-size: 1.8rem; color: var(--dark-color); margin: 40px 0 20px;
+            padding-bottom: 8px; border-bottom: 2px solid var(--accent-pink);
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        .notice-box {
+            background-color: var(--soft-pink); border-left: 4px solid var(--deep-pink);
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0 30px;
+            font-size: 0.9rem; color: var(--dark-color);
+        }
+
+        .notice-box i { color: var(--deep-pink); margin-right: 8px; }
+
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px; margin-bottom: 20px;
+        }
+
+        .service-card {
+            background: var(--light-color); border-radius: var(--border-radius);
+            overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);
+            border: 1px solid #f0f0f0; display: flex; flex-direction: column;
+        }
+
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); }
+        .service-img { height: 180px; width: 100%; object-fit: cover; }
+        .service-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .service-info h3 { font-size: 1.2rem; margin-bottom: 8px; }
+
+        .service-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: auto; padding-top: 15px; border-top: 1px dashed #eee;
+        }
+        .service-price { font-weight: 700; font-size: 1.25rem; color: var(--deep-pink); }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; }
+        .gallery-item { position: relative; height: 250px; border-radius: var(--border-radius); overflow: hidden; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .gallery-item:hover img { transform: scale(1.08); }
+        
+        .gallery-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center;
+            color: var(--light-color); opacity: 0; transition: var(--transition); font-size: 1.5rem;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-img img { border-radius: 50%; box-shadow: var(--shadow); max-width: 280px; margin: 0 auto; border: 5px solid var(--accent-pink); }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .feature-item { display: flex; align-items: center; gap: 10px; }
+        .feature-item i { color: var(--deep-pink); }
+
+        .contact-section { background-color: var(--nude-bg); }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info-list { list-style: none; margin-top: 20px; }
+        .contact-info-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .contact-info-list i { font-size: 1.2rem; color: var(--deep-pink); margin-top: 5px; }
+        
+        .map-container { border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow); height: 100%; min-height: 300px; }
+
+        footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; text-align: center; }
+        .footer-logo { font-family: var(--font-title); font-size: 2rem; margin-bottom: 10px; }
+        .footer-tagline { color: #aaa; font-style: italic; margin-bottom: 30px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
+        
+        .social-btn {
+            width: 45px; height: 45px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1);
+            display: flex; align-items: center; justify-content: center; color: var(--light-color);
+            font-size: 1.2rem; transition: var(--transition);
+        }
+        .social-btn:hover { background-color: var(--deep-pink); transform: translateY(-3px); }
+        .copyright { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; font-size: 0.85rem; color: #888; }
+
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); z-index: 999; transition: var(--transition);
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 2000;
+            align-items: center; justify-content: center;
+        }
+
+        .modal-content {
+            background: white; padding: 40px; border-radius: var(--border-radius);
+            max-width: 500px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--gray-text); }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 0.9rem;
+        }
+
+        .price-breakdown {
+            background-color: var(--nude-bg); border: 1px solid var(--accent-pink);
+            padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem;
+        }
+        .price-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .price-row.highlight { color: var(--deep-pink); font-weight: bold; border-top: 1px dashed #ddd; padding-top: 5px; margin-top: 5px; }
+
+        .time-slots-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+        .time-slot-btn {
+            padding: 10px; border: 1px solid var(--accent-pink); background-color: var(--nude-bg);
+            border-radius: 8px; cursor: pointer; text-align: center; font-weight: 600; font-size: 0.9rem; transition: var(--transition);
+        }
+        .time-slot-btn:hover { background-color: var(--accent-pink); color: white; }
+        .time-slot-btn.selected { background-color: var(--deep-pink); color: white; border-color: var(--deep-pink); }
+        .time-slot-btn.disabled { background-color: #e0e0e0; color: #a0a0a0; border-color: #ccc; cursor: not-allowed; text-decoration: line-through; }
+
+        .lightbox {
+            display: none; position: fixed; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.85); z-index: 3000; justify-content: center; align-items: center;
+        }
+        .lightbox img { max-width: 85%; max-height: 85%; border-radius: var(--border-radius); }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 80px; right: -100%; width: 100%; height: calc(100vh - 80px);
+                background-color: white; flex-direction: column; align-items: center; padding-top: 50px; transition: var(--transition);
+            }
+            .nav-links.active { right: 0; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-btns { flex-direction: column; }
+            .about-content, .contact-wrapper { grid-template-columns: 1fr; }
+            .time-slots-container { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Beautiful <span>Lashes & Nails</span> UY</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios & Precios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Estética Cindy Silveira 💅🏼💋</h1>
+                <p>Holis soy Cin✨ te invito al mundo de la belleza 🫶🏼 Realzamos tu estilo con la mejor calidad y atención personalizada.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" onclick="openBookingModal()">Reservar Turno</button>
+                    <a href="#servicios" class="btn btn-secondary">Ver Lista de Precios</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <p>Nuestros Tratamientos</p>
+                <h2>Lista de Servicios & Precios (26 en total)</h2>
+            </div>
+
+            <!-- SECCIÓN 1: 💅 SERVICIOS -->
+            <h3 class="category-header">💅 Servicios</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5511c9c9-d1d5-410c-b314-e4f15c2131bb.png" alt="Semipermanente" class="service-img">
+                    <div class="service-info">
+                        <h3>Semipermanente</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$700</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Semipermanente - $700')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/be817886-0378-4869-8acc-fcb6fb21077a.jpeg" alt="Kapping" class="service-img">
+                    <div class="service-info">
+                        <h3>Kapping</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$800</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Kapping - $800')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5539b750-1ad3-4390-a7cb-a3a7c2afd596.jpeg" alt="Soft Gel" class="service-img">
+                    <div class="service-info">
+                        <h3>Soft Gel</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.000</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Soft Gel - $1.000')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/7df26ff5-0a0f-443e-9beb-217764a37eea.jpeg" alt="Semi pies" class="service-img">
+                    <div class="service-info">
+                        <h3>Semi pies</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$700</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Semi pies - $700')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Laminado de cejas</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$700</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Laminado de cejas - $700')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/6f461bf8-892b-43bc-8a68-f5a780932256.jpeg" alt="Perfilado + bozo" class="service-img">
+                    <div class="service-info">
+                        <h3>Perfilado + bozo</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$250</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Perfilado + bozo - $250')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Perfilado con henna</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$500</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Perfilado con henna - $500')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/71b912ad-a37d-405d-bd2c-34dccadfedb4.jpeg" alt="Lifting de pestañas" class="service-img">
+                    <div class="service-info">
+                        <h3>Lifting de pestañas</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$950</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Lifting de pestañas - $950')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5b7ba4f9-245e-46ea-bdcc-99089235ab00.jpeg" alt="Pestañas Volumen 2D" class="service-img">
+                    <div class="service-info">
+                        <h3>Pestañas Volumen 2D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$950</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Pestañas Volumen 2D - $950')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Pestañas Volumen 3D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.150</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Pestañas Volumen 3D - $1.150')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Pestañas Volumen 4D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.350</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Pestañas Volumen 4D - $1.350')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Pestañas Brasileras</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.200</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Pestañas Brasileras - $1.200')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Retiro de acrílicas de otro lugar</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$250</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Retiro de acrílicas de otro lugar - $250')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Removedor de pestañas</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$250</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Removedor de pestañas - $250')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Arreglo de uña</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$100 c/u</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Arreglo de uña - $100 c/u')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: 💗 PROMOCIONES -->
+            <h3 class="category-header">💗 Promociones</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Lifting de pestañas + Semipermanente</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.450</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Lifting de pestañas + Semipermanente - $1.450')">Agendar Promo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Extensiones Vol. 3D + Perfilado de cejas</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.300</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Extensiones Vol. 3D + Perfilado de cejas - $1.300')">Agendar Promo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/be817886-0378-4869-8acc-fcb6fb21077a.jpeg" alt="Lifting de pestañas + Kapping" class="service-img">
+                    <div class="service-info">
+                        <h3>Lifting de pestañas + Kapping</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.600</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Lifting de pestañas + Kapping - $1.600')">Agendar Promo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Laminado + Lifting</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.500</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Laminado + Lifting - $1.500')">Agendar Promo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Semi manos y pies</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.200</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Semi manos y pies - $1.200')">Agendar Promo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: 🦋 MANTENIMIENTOS / RETOQUES -->
+            <h3 class="category-header">🦋 Mantenimientos / retoques</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Retoque / Extensiones 3D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$950</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Retoque / Extensiones 3D - $950')">Agendar Retoque</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Retoque / Extensiones 2D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$800</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Retoque / Extensiones 2D - $800')">Agendar Retoque</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Retoque / Extensiones 4D</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.150</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Retoque / Extensiones 4D - $1.150')">Agendar Retoque</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Retoque / Brasilera</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$1.000</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Retoque / Brasilera - $1.000')">Agendar Retoque</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-info">
+                        <h3>Servicio / Soft Gel</h3>
+                        <div class="service-meta">
+                            <span class="service-price">$800</span>
+                            <button class="btn btn-primary" onclick="openBookingModal('Servicio / Soft Gel - $800')">Agendar Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice-box">
+                <i class="fas fa-info-circle"></i>
+                En los retoques de pestañas, la página indica que hay que conservar aproximadamente el 50% de las pestañas para que cuente como mantenimiento; de lo contrario, se cobra como un servicio nuevo.
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-padding" id="galeria">
+        <div class="container">
+            <div class="section-title">
+                <p>Nuestros Trabajos</p>
+                <h2>Galería de Resultados</h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5511c9c9-d1d5-410c-b314-e4f15c2131bb.png')">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5511c9c9-d1d5-410c-b314-e4f15c2131bb.png" alt="Uñas Semipermanente">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/71b912ad-a37d-405d-bd2c-34dccadfedb4.jpeg')">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/71b912ad-a37d-405d-bd2c-34dccadfedb4.jpeg" alt="Lifting Pestañas">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/be817886-0378-4869-8acc-fcb6fb21077a.jpeg')">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/be817886-0378-4869-8acc-fcb6fb21077a.jpeg" alt="Kapping Gel">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5b7ba4f9-245e-46ea-bdcc-99089235ab00.jpeg')">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:600/h:400/dpr:1/rt:fill/g:obj/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/product-images/5b7ba4f9-245e-46ea-bdcc-99089235ab00.jpeg" alt="Extensiones Pestañas">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--nude-bg);" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://user-images.oopen.cloud/_/el:1/w:120/h:120/dpr:1/rt:fill/plain/merchants/15d91a15-614e-4950-a58e-ec3b8d6c384f/images/51e1dd4a-e070-4d03-8cc6-983e6b684015.jpeg" alt="Cindy Silveira">
+                </div>
+                <div class="about-text">
+                    <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                        <p>Sobre El Estudio</p>
+                        <h2>Atención Personalizada con Cindy Silveira</h2>
+                    </div>
+                    <p>En <strong>Beautiful Lashes & Nails UY (Estética Cindy Silveira)</strong> nos enfocamos en brindarte un trato exclusivo para realzar tu belleza natural. Nuestro compromiso es cuidar la salud de tus pestañas y uñas con técnicas innovadoras y materiales de excelente calidad.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Atención Personalizada</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Máxima Higiene</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Insumos Premium</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Ambiente Cálido</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding contact-section" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <p>Encuéntranos</p>
+                <h2>Ubicación & Reservas</h2>
+            </div>
+
+            <div class="contact-wrapper">
+                <div>
+                    <h3>Detalles de Atención</h3>
+                    <p>Agéndate directamente desde nuestro formulario o contáctanos por WhatsApp para coordinar tu cita.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong><br>
+                                Sierra Leona 3700, Montevideo, Uruguay.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario:</strong><br>
+                                Lun a Vie: 09:00 a 19:00 hs | Sáb: 08:00 a 18:00 hs
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <strong>Instagram:</strong><br>
+                                @estetica_cinsilveira
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 25px; display: flex; gap: 10px;">
+                        <a href="https://wa.me/59896247696" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+                        <a href="https://www.instagram.com/estetica_cinsilveira/" target="_blank" class="btn btn-secondary"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Sierra%20Leona%203700%2C%20Montevideo&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Beautiful Lashes & Nails UY</div>
+            <p class="footer-tagline">"Realzamos tu belleza, un detalle a la vez."</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/estetica_cinsilveira/" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/59896247696" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <div class="copyright">
+                © Beautiful Lashes & Nails UY | Estética Cindy Silveira. Sierra Leona 3700, Montevideo.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/59896247696?text=Hola%20Cin,%20quisiera%20consultar%20por%20un%20turno" class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal de Reserva con Seña del 50% Integrada -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeBookingModal()">×</span>
+            <h2 style="font-size: 2rem; margin-bottom: 5px;">Reservar Turno</h2>
+            
+            <div class="notice-box" style="margin: 10px 0 15px 0; padding: 10px 12px; font-size: 0.8rem;">
+                💗 Para reservar tu turno se requiere una seña del 50% del valor del servicio. El saldo restante se abona el día de la cita.<br>
+                <strong>⚠️ La reserva queda confirmada una vez que se acredita correctamente la seña.</strong>
+            </div>
+            
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label>Servicio Seleccionado</label>
+                    <select id="serviceSelect" onchange="updatePriceBreakdown()" required>
+                        <option value="">-- Selecciona una opción --</option>
+                        
+                        <optgroup label="💅 Servicios">
+                            <option value="Semipermanente - $700">Semipermanente - $700</option>
+                            <option value="Kapping - $800">Kapping - $800</option>
+                            <option value="Soft Gel - $1.000">Soft Gel - $1.000</option>
+                            <option value="Semi pies - $700">Semi pies - $700</option>
+                            <option value="Laminado de cejas - $700">Laminado de cejas - $700</option>
+                            <option value="Perfilado + bozo - $250">Perfilado + bozo - $250</option>
+                            <option value="Perfilado con henna - $500">Perfilado con henna - $500</option>
+                            <option value="Lifting de pestañas - $950">Lifting de pestañas - $950</option>
+                            <option value="Pestañas Volumen 2D - $950">Pestañas Volumen 2D - $950</option>
+                            <option value="Pestañas Volumen 3D - $1.150">Pestañas Volumen 3D - $1.150</option>
+                            <option value="Pestañas Volumen 4D - $1.350">Pestañas Volumen 4D - $1.350</option>
+                            <option value="Pestañas Brasileras - $1.200">Pestañas Brasileras - $1.200</option>
+                            <option value="Retiro de acrílicas de otro lugar - $250">Retiro de acrílicas de otro lugar - $250</option>
+                            <option value="Removedor de pestañas - $250">Removedor de pestañas - $250</option>
+                            <option value="Arreglo de uña - $100 c/u">Arreglo de uña - $100 c/u</option>
+                        </optgroup>
+
+                        <optgroup label="💗 Promociones">
+                            <option value="Lifting de pestañas + Semipermanente - $1.450">Lifting de pestañas + Semipermanente - $1.450</option>
+                            <option value="Extensiones Vol. 3D + Perfilado de cejas - $1.300">Extensiones Vol. 3D + Perfilado de cejas - $1.300</option>
+                            <option value="Lifting de pestañas + Kapping - $1.600">Lifting de pestañas + Kapping - $1.600</option>
+                            <option value="Laminado + Lifting - $1.500">Laminado + Lifting - $1.500</option>
+                            <option value="Semi manos y pies - $1.200">Semi manos y pies - $1.200</option>
+                        </optgroup>
+
+                        <optgroup label="🦋 Mantenimientos / retoques">
+                            <option value="Retoque / Extensiones 3D - $950">Retoque / Extensiones 3D - $950</option>
+                            <option value="Retoque / Extensiones 2D - $800">Retoque / Extensiones 2D - $800</option>
+                            <option value="Retoque / Extensiones 4D - $1.150">Retoque / Extensiones 4D - $1.150</option>
+                            <option value="Retoque / Brasilera - $1.000">Retoque / Brasilera - $1.000</option>
+                            <option value="Servicio / Soft Gel - $800">Servicio / Soft Gel - $800</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="price-breakdown" id="priceBreakdown" style="display: none;">
+                    <div class="price-row"><span>Precio del servicio:</span> <strong id="lblPrice">$0</strong></div>
+                    <div class="price-row highlight"><span>Seña requerida (50%):</span> <strong id="lblDeposit">$0</strong></div>
+                    <div class="price-row"><span>Saldo a pagar el día del turno:</span> <strong id="lblBalance">$0</strong></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre y Apellido</label>
+                    <input type="text" id="clientName" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono / WhatsApp</label>
+                    <input type="tel" id="clientPhone" placeholder="099 000 000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de la Cita</label>
+                    <input type="text" id="bookingDate" placeholder="Selecciona una fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Horarios Disponibles</label>
+                    <div id="timeSlotsContainer" class="time-slots-container">
+                        <p style="font-size:0.85rem; color:#888; grid-column: span 3;">Primero elige una fecha para ver las horas disponibles.</p>
+                    </div>
+                    <input type="hidden" id="selectedTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Observaciones (Opcional)</label>
+                    <textarea id="bookingNotes" rows="2" placeholder="Aclaraciones adicionales"></textarea>
+                </div>
+
+                <button type="submit" id="btnSubmit" class="btn btn-primary" style="width: 100%;">PAGAR SEÑA DEL 50%</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="Imagen Ampliada">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+
+    <!-- SDKs de Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <script>
+        // CONFIGURACIÓN DE TU PROYECTO DE FIREBASE
+        const firebaseConfig = {
+            apiKey: "REEMPLAZAR_CON_TU_API_KEY",
+            authDomain: "REEMPLAZAR_CON_TU_PROJECT.firebaseapp.com",
+            databaseURL: "https://REEMPLAZAR_CON_TU_PROJECT-default-rtdb.firebaseio.com",
+            projectId: "REEMPLAZAR_CON_TU_PROJECT"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // URL de tu backend en producción
+        const API_BACKEND_URL = "https://tu-api.com/api";
+
+        const weekdayHours = ["09:00", "11:00", "13:00", "15:00", "17:00"];
+        const saturdayHours = ["08:00", "10:00", "12:00", "14:00", "16:00"];
+
+        let flatpickrInstance = null;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            flatpickrInstance = flatpickr("#bookingDate", {
+                locale: "es",
+                minDate: "today",
+                dateFormat: "Y-m-d",
+                disable: [function(date) { return (date.getDay() === 0); }],
+                onChange: function(selectedDates, dateStr) {
+                    renderTimeSlots(selectedDates[0], dateStr);
+                }
+            });
+
+            // Procesar solicitud de cancelación si viene cancelToken en la URL
+            checkCancelTokenInUrl();
+        });
+
+        // Función para cancelar reserva desde el frontend si el usuario hace clic en un link de cancelación
+        async function checkCancelTokenInUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cancelToken = urlParams.get('cancelToken');
+
+            if (cancelToken) {
+                if (confirm("¿Estás seguro de que deseas cancelar tu reserva?")) {
+                    try {
+                        const response = await fetch(`${API_BACKEND_URL}/cancelar-reserva`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ cancelToken: cancelToken })
+                        });
+
+                        const data = await response.json();
+                        if (response.ok) {
+                            alert("Tu reserva ha sido cancelada correctamente y el horario fue liberado.");
+                        } else {
+                            alert(data.error || "No se pudo cancelar la reserva.");
+                        }
+                    } catch (err) {
+                        alert("Ocurrió un error al intentar cancelar la reserva.");
+                    }
+                }
+                // Limpiar la URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+
+        // Detectar automáticamente el precio y calcular la seña del 50%
+        function updatePriceBreakdown() {
+            const serviceSelect = id('serviceSelect').value;
+            const breakdownBox = id('priceBreakdown');
+
+            if (!serviceSelect) {
+                breakdownBox.style.display = 'none';
+                return;
+            }
+
+            const priceMatch = serviceSelect.match(/\$\s*([\d\.]+)/);
+            if (priceMatch) {
+                const numericPrice = parseFloat(priceMatch[1].replace('.', ''));
+                const deposit = numericPrice * 0.5;
+                const balance = numericPrice * 0.5;
+
+                id('lblPrice').textContent = `$${numericPrice.toLocaleString('es-UY')}`;
+                id('lblDeposit').textContent = `$${deposit.toLocaleString('es-UY')}`;
+                id('lblBalance').textContent = `$${balance.toLocaleString('es-UY')}`;
+                
+                breakdownBox.style.display = 'block';
+            }
+        }
+
+        // Obtener horarios ocupados y desestimar reservas expiradas o canceladas
+        function renderTimeSlots(selectedDate, dateStr) {
+            const container = id('timeSlotsContainer');
+            container.innerHTML = '<p style="font-size:0.85rem; color:#888; grid-column: span 3;">Cargando horarios...</p>';
+            id('selectedTime').value = '';
+
+            if (!selectedDate) return;
+
+            const dayOfWeek = selectedDate.getDay();
+            const availableHours = (dayOfWeek === 6) ? saturdayHours : weekdayHours;
+
+            db.ref('turnos').orderByChild('fecha').equalTo(dateStr).once('value', (snapshot) => {
+                const takenHours = [];
+                const now = Date.now();
+                const HOLD_TIME_MS = 15 * 60 * 1000; // 15 minutos de tolerancia para pago pendiente
+
+                snapshot.forEach((childSnapshot) => {
+                    const booking = childSnapshot.val();
+                    
+                    // Solo bloquea si está confirmado O si está pendiente pero no han pasado 15 min
+                    if (booking.estado === 'confirmado') {
+                        takenHours.push(booking.hora);
+                    } else if (booking.estado === 'pendiente_pago') {
+                        const createdAt = booking.createdAt || 0;
+                        if (now - createdAt < HOLD_TIME_MS) {
+                            takenHours.push(booking.hora); // Todavía está dentro del tiempo de pago
+                        }
+                    }
+                });
+
+                container.innerHTML = '';
+                availableHours.forEach(hour => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'time-slot-btn';
+                    button.textContent = hour;
+
+                    if (takenHours.includes(hour)) {
+                        button.classList.add('disabled');
+                        button.disabled = true;
+                    } else {
+                        button.onclick = function() {
+                            document.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('selected'));
+                            button.classList.add('selected');
+                            id('selectedTime').value = hour;
+                        };
+                    }
+                    container.appendChild(button);
+                });
+            });
+        }
+
+        const hamburger = id('hamburger');
+        const navLinks = id('navLinks');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+        function openBookingModal(serviceName = '') {
+            const modal = id('bookingModal');
+            if (serviceName) {
+                const select = id('serviceSelect');
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === serviceName) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+                updatePriceBreakdown();
+            }
+            modal.style.display = 'flex';
+        }
+
+        function closeBookingModal() { id('bookingModal').style.display = 'none'; }
+        function generateCancelToken() { return 'CANCEL-' + Math.random().toString(36).substring(2, 9).toUpperCase(); }
+
+        // Crear la orden de seña e iniciar Mercado Pago
+        async function handleBooking(e) {
+            e.preventDefault();
+            
+            const btnSubmit = id('btnSubmit');
+            const service = id('serviceSelect').value;
+            const name = id('clientName').value;
+            const phone = id('clientPhone').value;
+            const date = id('bookingDate').value;
+            const time = id('selectedTime').value;
+            const notes = id('bookingNotes').value;
+
+            if (!time) {
+                alert("Por favor selecciona un horario disponible.");
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = "PROCESANDO PAGO...";
+
+            try {
+                const response = await fetch(`${API_BACKEND_URL}/crear-reserva-pago`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        cliente: name,
+                        telefono: phone,
+                        servicio: service,
+                        fecha: date,
+                        hora: time,
+                        observaciones: notes,
+                        cancelToken: generateCancelToken()
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    alert(data.error || "Este horario ya fue reservado o expiró la disponibilidad.");
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = "PAGAR SEÑA DEL 50%";
+                    // Recargar turnos actualizados
+                    const dateObj = new Date(date + 'T00:00:00');
+                    renderTimeSlots(dateObj, date);
+                    return;
+                }
+
+                // Redirección a Mercado Pago
+                window.location.href = data.init_point;
+
+            } catch (err) {
+                alert("Error de comunicación con el servidor de pagos.");
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = "PAGAR SEÑA DEL 50%";
+            }
+        }
+
+        function openLightbox(src) { id('lightboxImg').src = src; id('lightbox').style.display = 'flex'; }
+        function closeLightbox() { id('lightbox').style.display = 'none'; }
+        function id(elementId) { return document.getElementById(elementId); }
+
+        window.onclick = function(event) {
+            if (event.target === id('bookingModal')) closeBookingModal();
+        };
+    </script>
+</body>
+</html>
